@@ -44,7 +44,7 @@ export default async function TicketDetails({ params }) {
   return (
     <main>
       <nav>
-        <h2>Ticket Details</h2>
+        <h2>Commission Ticket Details</h2>
         <div className="ml-auto">
           {data.session.user.email === ticket.user_email && (
             <DeleteIcon id={ticket.id} />

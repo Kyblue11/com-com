@@ -13,8 +13,10 @@ export default function Navbar({ user }) {
         placeholder='blur'
         quality={100}
       />
-      <h1>Com com</h1>
-      <Link href="/">Dashboard</Link>
+      <Link href="/">
+        <h1>Com com</h1>
+      </Link>
+      <Link href="/">Discover</Link>
       <Link href="/tickets" className="mr-auto">Tickets</Link>
       {user && <span>Hewwo, {user.email}</span>}
       <LogoutButton />

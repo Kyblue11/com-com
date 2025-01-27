@@ -8,7 +8,7 @@ export default function Home() {
 
       <div className="flex justify-center my-8">
         <Link href="/tickets">
-          <button className="btn-primary">View Tickets</button>
+          <button className="btn-primary">View Commission Tickets</button>
         </Link>
       </div>
 
