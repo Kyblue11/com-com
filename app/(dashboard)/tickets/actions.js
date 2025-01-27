@@ -21,6 +21,7 @@ export async function addTicket(formData) {
     })
   
     if (error) {
+      console.error('Supabase insert error:', error)
       throw new Error('Could not add the new ticket.')
     }
 
