@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo from './dojo-logo.png'
+import Logo from './anilabs_logo.png'
 import LogoutButton from './LogoutButton'
 
 export default function Navbar({ user }) {
@@ -8,15 +8,15 @@ export default function Navbar({ user }) {
     <nav>
       <Image
         src={Logo}
-        alt='Dojo Helpdesk logo'
+        alt='ComCom is the new Anilabs logo'
         width={70}
         placeholder='blur'
         quality={100}
       />
-      <h1>Dojo Helpdesk</h1>
+      <h1>Com com</h1>
       <Link href="/">Dashboard</Link>
       <Link href="/tickets" className="mr-auto">Tickets</Link>
-      {user && <span>Hello, {user.email}</span>}
+      {user && <span>Hewwo, {user.email}</span>}
       <LogoutButton />
     </nav>
   )
