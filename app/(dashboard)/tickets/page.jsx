@@ -4,7 +4,7 @@ import Loading from "../loading"
 import Link from "next/link"
 
 export const metadata = {
-  title: 'ComCom Dashboard | Tickets'
+  title: 'Com com | Tickets'
 }
 
 export default function Tickets() {
