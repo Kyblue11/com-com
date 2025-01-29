@@ -24,10 +24,13 @@ export default async function TicketList() {
         <div key={ticket.id} className="card my-5">
           <Link href={`/tickets/${ticket.id}`}>
             <h3>{ticket.title}</h3>
-            <p>{ticket.body.slice(0, 200)}...</p>
+            <p>{ticket.body.slice(0, 55)}...</p>
             <div className={`pill ${ticket.priority}`}>
               {ticket.priority} priority
             </div>
+            {ticket.commission_pic && (
+              <img src={ticket.commission_pic} alt="Commission" className="commission-pic" />
+            )}
           </Link>
         </div>
       ))}

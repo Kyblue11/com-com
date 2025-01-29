@@ -58,6 +58,15 @@ export default async function TicketDetails({ params }) {
         <div className={`pill ${ticket.priority}`}>
           {ticket.priority} priority
         </div>
+        {ticket.commission_pic && (
+          <img src={ticket.commission_pic} alt="Commission" className="commission-pic" />
+        )}
+        <p>Additional attributes:</p>
+        <ul>
+          <li>Attribute 1: {ticket.attribute1}</li>
+          <li>Attribute 2: {ticket.attribute2}</li>
+          {/*TODO: add more attributes as needed */}
+        </ul>
       </div>
     </main>
   )
