@@ -25,26 +25,26 @@ async function getTicket(id) {
   const supabase = createServerComponentClient({ cookies })
 
   const { data } = await supabase.from('tickets')
-  .select(`
-    id,
-    title,
-    body,
-    priority,
-    commission_pic,
-    artist_id,
-    artists (
-      name,
-      profile_picture
-    )
-  `)
+    .select(`
+      id,
+      title,
+      body,
+      priority,
+      commission_pic,
+      artist_id,
+      artists (
+        name,
+        profile_picture
+      )
+    `)
     .eq('id', id)
     .single()
 
-    if (!data) {
-      notFound()
-    }
-  
-    return data
+  if (!data) {
+    notFound()
+  }
+
+  return data
 }
 
 export default async function TicketDetails({ params }) {
