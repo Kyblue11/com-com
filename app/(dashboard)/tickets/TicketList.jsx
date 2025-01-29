@@ -19,7 +19,7 @@ export default async function TicketList() {
   const tickets = await getTickets()
 
   return (
-    <>
+    <div className="ticket-grid">
       {tickets.map((ticket) => (
         <div key={ticket.id} className="card my-5">
           <Link href={`/tickets/${ticket.id}`}>
@@ -34,6 +34,6 @@ export default async function TicketList() {
       {tickets.length === 0 && (
         <p className="text-center">There are no open tickets, yay!</p>
       )}
-    </>
+    </div>
   )
 }

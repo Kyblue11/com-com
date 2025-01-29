@@ -6,8 +6,8 @@ export default function SubmitButton() {
 
   return (
     <button disabled={pending} className='btn-primary'>
-      {pending && <span>Submitting...</span>}
-      {!pending && <span>Submit</span>}
+      {pending && <span>Uploading...</span>}
+      {!pending && <span>Upload</span>}
     </button>
   )
 }
