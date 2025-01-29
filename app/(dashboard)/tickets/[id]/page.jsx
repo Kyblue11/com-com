@@ -1,6 +1,7 @@
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { cookies } from 'next/headers'
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { getTicket } from '../../services/tickets'
+import { getServerComponentClient } from '../../supabaseClient'
 
 // components
 import DeleteIcon from './DeleteIcon'
@@ -8,7 +9,7 @@ import DeleteIcon from './DeleteIcon'
 export const dynamicParams = true
 
 export async function generateMetadata({ params }) {
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = getServerComponentClient()
 
   const { data: ticket } = await supabase.from('tickets')
     .select()
@@ -20,25 +21,10 @@ export async function generateMetadata({ params }) {
   }
 }
 
-async function getTicket(id) {
-  const supabase = createServerComponentClient({ cookies })
-
-  const { data } = await supabase.from('tickets')
-    .select()
-    .eq('id', id)
-    .single()
-
-    if (!data) {
-      notFound()
-    }
-  
-    return data
-}
-
 export default async function TicketDetails({ params }) {
   const ticket = await getTicket(params.id)
 
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = getServerComponentClient()
   const { data } = await supabase.auth.getSession()
 
   return (
@@ -58,6 +44,16 @@ export default async function TicketDetails({ params }) {
         <div className={`pill ${ticket.priority}`}>
           {ticket.priority} priority
         </div>
+        {ticket.commission_pic && (
+          <img src={ticket.commission_pic} alt="Commission" className="commission-pic" />
+        )}
+        <p>Artist: <Link href={`/artists/${ticket.artist_id}`}>{ticket.artists.name}</Link></p>
+        <p>Additional attributes:</p>
+        <ul>
+          <li>Attribute 1: {ticket.attribute1}</li>
+          <li>Attribute 2: {ticket.attribute2}</li>
+          {/*TODO: add more attributes as needed */}
+        </ul>
       </div>
     </main>
   )
