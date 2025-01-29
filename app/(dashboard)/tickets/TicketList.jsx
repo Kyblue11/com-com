@@ -6,7 +6,18 @@ async function getTickets() {
   const supabase = createServerComponentClient({ cookies })
 
   const { data, error } = await supabase.from('tickets')
-    .select()
+  .select(`
+    id,
+    title,
+    body,
+    priority,
+    commission_pic,
+    artist_id,
+    artists (
+      name,
+      profile_picture
+    )
+  `)
 
   if (error) {
     console.log(error.message)
@@ -31,6 +42,12 @@ export default async function TicketList() {
             {ticket.commission_pic && (
               <img src={ticket.commission_pic} alt="Commission" className="commission-pic" />
             )}
+            <div className="artist-info">
+              {ticket.artists.profile_picture && (
+                <img src={ticket.artists.profile_picture} alt="Artist" className="artist-pic" />
+              )}
+              <p>{ticket.artists.name}</p>
+            </div>
           </Link>
         </div>
       ))}

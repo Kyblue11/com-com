@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
@@ -24,7 +25,18 @@ async function getTicket(id) {
   const supabase = createServerComponentClient({ cookies })
 
   const { data } = await supabase.from('tickets')
-    .select()
+  .select(`
+    id,
+    title,
+    body,
+    priority,
+    commission_pic,
+    artist_id,
+    artists (
+      name,
+      profile_picture
+    )
+  `)
     .eq('id', id)
     .single()
 
@@ -61,6 +73,7 @@ export default async function TicketDetails({ params }) {
         {ticket.commission_pic && (
           <img src={ticket.commission_pic} alt="Commission" className="commission-pic" />
         )}
+        <p>Artist: <Link href={`/artists/${ticket.artist_id}`}>{ticket.artists.name}</Link></p>
         <p>Additional attributes:</p>
         <ul>
           <li>Attribute 1: {ticket.attribute1}</li>
