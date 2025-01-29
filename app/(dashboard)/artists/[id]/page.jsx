@@ -1,11 +1,11 @@
 import { notFound } from 'next/navigation'
-import { cookies } from 'next/headers'
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { getArtist } from '../../services/artists'
+import { getServerComponentClient } from '../../supabaseClient'
 
 export const dynamicParams = true
 
 export async function generateMetadata({ params }) {
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = getServerComponentClient()
 
   const { data: artist } = await supabase.from('artists')
     .select()
@@ -17,25 +17,10 @@ export async function generateMetadata({ params }) {
   }
 }
 
-async function getArtist(id) {
-  const supabase = createServerComponentClient({ cookies })
-
-  const { data } = await supabase.from('artists')
-    .select()
-    .eq('artist_id', id)
-    .single()
-
-  if (!data) {
-    notFound()
-  }
-
-  return data
-}
-
 export default async function ArtistProfile({ params }) {
   const artist = await getArtist(params.id)
 
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = getServerComponentClient()
   const { data } = await supabase.auth.getSession()
 
   return (

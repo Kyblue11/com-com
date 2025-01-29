@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { cookies } from 'next/headers'
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { getTicket } from '../../services/tickets'
+import { getServerComponentClient } from '../../supabaseClient'
 
 // components
 import DeleteIcon from './DeleteIcon'
@@ -9,7 +9,7 @@ import DeleteIcon from './DeleteIcon'
 export const dynamicParams = true
 
 export async function generateMetadata({ params }) {
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = getServerComponentClient()
 
   const { data: ticket } = await supabase.from('tickets')
     .select()
@@ -21,36 +21,10 @@ export async function generateMetadata({ params }) {
   }
 }
 
-async function getTicket(id) {
-  const supabase = createServerComponentClient({ cookies })
-
-  const { data } = await supabase.from('tickets')
-    .select(`
-      id,
-      title,
-      body,
-      priority,
-      commission_pic,
-      artist_id,
-      artists (
-        name,
-        profile_picture
-      )
-    `)
-    .eq('id', id)
-    .single()
-
-  if (!data) {
-    notFound()
-  }
-
-  return data
-}
-
 export default async function TicketDetails({ params }) {
   const ticket = await getTicket(params.id)
 
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = getServerComponentClient()
   const { data } = await supabase.auth.getSession()
 
   return (
