@@ -33,6 +33,7 @@ export async function getTicket(id) {
       body,
       commission_pic,
       artist_id,
+      price,
       artists (
         name,
         profile_picture

@@ -47,7 +47,7 @@ export default async function TicketDetails({ params }) {
         <p>Artist: <Link href={`/artists/${ticket.artist_id}`}>{ticket.artists.name}</Link></p>
         <p>Additional attributes:</p>
         <ul>
-          <li>Attribute 1: {ticket.attribute1}</li>
+          <li>Price: RM{ticket.price}</li>
           <li>Attribute 2: {ticket.attribute2}</li>
           {/*TODO: add more attributes as needed */}
         </ul>
