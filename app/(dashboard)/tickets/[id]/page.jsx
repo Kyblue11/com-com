@@ -39,11 +39,8 @@ export default async function TicketDetails({ params }) {
       </nav>
       <div className="card">
         <h3>{ticket.title}</h3>
-        <small>Created by {ticket.user_email}</small>
+        <small></small>
         <p>{ticket.body}</p>
-        <div className={`pill ${ticket.priority}`}>
-          {ticket.priority} priority
-        </div>
         {ticket.commission_pic && (
           <img src={ticket.commission_pic} alt="Commission" className="commission-pic" />
         )}

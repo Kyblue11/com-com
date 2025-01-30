@@ -8,7 +8,6 @@ export async function getTickets() {
       id,
       title,
       body,
-      priority,
       commission_pic,
       artist_id,
       artists (
@@ -32,7 +31,6 @@ export async function getTicket(id) {
       id,
       title,
       body,
-      priority,
       commission_pic,
       artist_id,
       artists (
