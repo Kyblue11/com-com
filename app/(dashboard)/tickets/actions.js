@@ -11,7 +11,7 @@ export async function addTicket(formData) {
   const supabase = createServerActionClient({ cookies })
 
   // get current user session
-  const { data: { session } } = await supabase.auth.getSession()
+  const { data: { session } } = await supabase.auth.getSession() // TODO: use for smth else
 
   // insert the data
   const { error } = await supabase.from('tickets')

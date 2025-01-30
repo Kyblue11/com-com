@@ -13,6 +13,18 @@ export default function CreateForm() {
         <span>Body:</span>
         <textarea required name="body" />
       </label>
+      <label>
+        <span>Artist ID:</span>
+        <input required type="number" name="artist_id" />
+      </label>
+      <label>
+        <span>Commission Picture(s) URL: TODO: Automate Bucket insertion</span>
+        <input required type="text" name="commission_pic" />
+      </label>
+      <label>
+        <span>Price:</span>
+        <input required type="number" name="price" step="0.01" />
+      </label>
       <SubmitButton />
     </form>
   )
