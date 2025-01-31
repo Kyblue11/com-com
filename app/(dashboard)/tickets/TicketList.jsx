@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getTickets } from '../services/tickets'
+import Carousel from '../../components/Carousel'
 
 export default async function TicketList() {
   const tickets = await getTickets()
@@ -12,9 +13,9 @@ export default async function TicketList() {
           <Link href={`/tickets/${ticket.id}`}>
             <h3>{ticket.title}</h3>
             <p>{ticket.body.slice(0, 52)}...</p>
-            {Array.isArray(ticket.commission_pics.urls) && ticket.commission_pics.urls.map((url, index) => (
-              <img key={index} src={url} alt="Commission" className="commission-pic" />
-            ))}
+            {Array.isArray(ticket.commission_pics.urls) && (
+              <Carousel images={ticket.commission_pics.urls} />
+            )}
             <div className="artist-info">
               {ticket.artists.profile_picture && (
                 <img src={ticket.artists.profile_picture} alt="Artist" className="artist-pic" />
