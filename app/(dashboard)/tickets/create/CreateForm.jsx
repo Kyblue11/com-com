@@ -18,8 +18,8 @@ export default function CreateForm() {
         <input required type="number" name="artist_id" />
       </label>
       <label>
-        <span>Commission Picture(s) URL: TODO: Automate Bucket insertion</span>
-        <input required type="text" name="commission_pic" />
+        <span>Commission Picture(s) URL, comma-seperated: \nTODO: Automate Bucket insertion</span>
+        <input required type="text" name="commission_pics" />
       </label>
       <label>
         <span>Price:</span>

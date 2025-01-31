@@ -41,9 +41,9 @@ export default async function TicketDetails({ params }) {
         <h3>{ticket.title}</h3>
         <small></small>
         <p>{ticket.body}</p>
-        {ticket.commission_pic && (
-          <img src={ticket.commission_pic} alt="Commission" className="commission-pic" />
-        )}
+        {Array.isArray(ticket.commission_pics.urls) && ticket.commission_pics.urls.map((url, index) => (
+          <img key={index} src={url} alt="Commission" className="commission-pic" />
+        ))}
         <p>Artist: <Link href={`/artists/${ticket.artist_id}`}>{ticket.artists.name}</Link></p>
         <p>Additional attributes:</p>
         <ul>
