@@ -1,4 +1,3 @@
-// supabaseClient.js
 import { createServerComponentClient, createServerActionClient, createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 

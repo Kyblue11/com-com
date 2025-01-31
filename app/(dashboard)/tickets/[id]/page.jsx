@@ -37,23 +37,24 @@ export default async function TicketDetails({ params }) {
           )}
         </div>
       </nav>
-      <div className="card">
-        <h3>{ticket.title}</h3>
-        <small>Created by {ticket.user_email}</small>
-        <p>{ticket.body}</p>
-        <div className={`pill ${ticket.priority}`}>
-          {ticket.priority} priority
+      <div className="ticket-details-container">
+        <div className="ticket-details-left">
+          {Array.isArray(ticket.commission_pics.urls) && ticket.commission_pics.urls.map((url, index) => (
+            <img key={index} src={url} alt="Commission" className="commission-pic" />
+          ))}
         </div>
-        {ticket.commission_pic && (
-          <img src={ticket.commission_pic} alt="Commission" className="commission-pic" />
-        )}
-        <p>Artist: <Link href={`/artists/${ticket.artist_id}`}>{ticket.artists.name}</Link></p>
-        <p>Additional attributes:</p>
-        <ul>
-          <li>Attribute 1: {ticket.attribute1}</li>
-          <li>Attribute 2: {ticket.attribute2}</li>
-          {/*TODO: add more attributes as needed */}
-        </ul>
+        <div className="ticket-details-right">
+          <h3>{ticket.title}</h3>
+          <small></small>
+          <p>{ticket.body}</p>
+          <p>Artist: <Link href={`/artists/${ticket.artist_id}`}>{ticket.artists.name}</Link></p>
+          <p>Additional attributes:</p>
+          <ul>
+            <li>Price: RM{ticket.price}</li>
+            <li>Attribute 2: {ticket.attribute2}</li>
+            {/*TODO: add more attributes as needed */}
+          </ul>
+        </div>
       </div>
     </main>
   )

@@ -8,15 +8,9 @@ export async function POST(request) {
   // get supabase instance
   const supabase = createRouteHandlerClient({ cookies })
 
-  // get current user session
-  const { data: { session } } = await supabase.auth.getSession()
-
   // insert the data
   const { data, error } = await supabase.from('tickets')
-    .insert({
-      ...ticket,
-      user_email: session.user.email,
-    })
+    .insert(ticket)
     .select()
     .single()
 

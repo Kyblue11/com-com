@@ -1,6 +1,7 @@
 import SubmitButton from "@/app/components/SubmitButton"
 import { addTicket } from "../actions"
 
+// TODO: prob dont need this file
 export default function CreateForm() {
   return (
     <form action={addTicket} className="w-1/2">
@@ -13,12 +14,16 @@ export default function CreateForm() {
         <textarea required name="body" />
       </label>
       <label>
-        <span>Priority:</span>
-        <select name="priority">
-          <option value="low">Low Priority</option>
-          <option value="medium">Medium Priority</option>
-          <option value="high">High Priority</option>
-        </select>
+        <span>Artist ID:</span>
+        <input required type="number" name="artist_id" />
+      </label>
+      <label>
+        <span>Commission Picture(s) URL, comma-seperated: \nTODO: Automate Bucket insertion</span>
+        <input required type="text" name="commission_pics" />
+      </label>
+      <label>
+        <span>Price:</span>
+        <input required type="number" name="price" step="0.01" />
       </label>
       <SubmitButton />
     </form>
