@@ -8,6 +8,6 @@ unlike the first website, this one uses:
 - a really lightweight package.json
 
 - Webtest Speed check (current):
-Anilabs.net: 59 81 96 100
-Anelabs Vercel Optimised: 75 81 96 100
-Com Com Vercel: 100 95 100 91
+  1. Anilabs.net: 59 81 96 100
+  2. Anelabs Vercel Optimised: 75 81 96 100
+  3. Com Com Vercel: 100 95 100 91
