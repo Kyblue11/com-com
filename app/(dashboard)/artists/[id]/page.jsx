@@ -88,6 +88,7 @@ export default async function ArtistProfile({ params }) {
         <div className="grid grid-cols-3 gap-5 mt-14 max-md:grid-cols-1">
           {works.slice(0, 3).map((work, index) => (
             <ProductCard
+              key = { index }
               ticket = { work }
             />
           ))}
