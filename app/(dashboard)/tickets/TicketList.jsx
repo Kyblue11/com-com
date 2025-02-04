@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 export default async function TicketList() {
   const tickets = await getTickets();
-  // console.log("tickets are: ", tickets)
 
   return (
     <div className="mt-24 mb-0 w-full max-w-[1250px] max-md:mt-10 max-md:mb-2.5 max-md:max-w-full">

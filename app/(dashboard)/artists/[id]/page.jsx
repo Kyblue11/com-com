@@ -19,6 +19,7 @@ export async function generateMetadata({ params }) {
   }
 }
 
+// TODO: modularize this later
 export default async function ArtistProfile({ params }) {
   const artist = await getArtist(params.id)
   const works = await getArtistWorks(params.id)
