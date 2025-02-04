@@ -75,7 +75,7 @@ export default async function ArtistProfile({ params }) {
 
       <section className="flex flex-col pl-12 mt-28 w-full max-md:pl-5 max-md:mt-10 max-md:max-w-full">
         <div className="text-xl font-medium text-black tracking-[2px]">
-          ARTIST'S WORK
+          ARTIST&apos;S WORK
         </div>
         <h2 className="mt-9 text-5xl font-medium text-black max-md:max-w-full max-md:text-4xl">
           Here are some of the best works
@@ -99,7 +99,7 @@ export default async function ArtistProfile({ params }) {
         <div className="flex flex-col items-start mt-4 text-black">
           <h2 className="text-xl font-medium tracking-[2px]">REVIEWS</h2>
           <div className="self-stretch mt-7 text-base font-[250]">
-            Read what others have to say about {artist.name}'s work.
+            Read what others have to say about {artist.name}&apos;s work.
           </div>
           <div className="flex gap-4 mt-3.5">
             <div className="flex flex-col text-sm">
