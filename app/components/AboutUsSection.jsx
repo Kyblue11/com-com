@@ -1,3 +1,7 @@
+import paperIcon from './paper_icon.png'
+import boxIcon from './box_icon.png'
+import phoneIcon from './phone_icon.png'
+
 export default function AboutUsSection() {
   return (
     <div className="flex overflow-hidden flex-col items-center px-20 pt-10 pb-40 bg-white max-md:px-10 max-md:py-8 max-sm:px-5 max-sm:py-5">
@@ -13,38 +17,41 @@ export default function AboutUsSection() {
         <div className="flex gap-6 justify-center w-full max-md:flex-wrap max-md:gap-10 max-md:justify-center max-sm:flex-col">
           <div className="flex flex-col items-center p-5 text-center w-[400px] max-md:min-w-[300px] max-md:w-[45%] max-sm:w-full max-sm:min-w-0">
             <div className="flex justify-center items-center mb-6 w-20 h-20 rounded-full bg-slate-200 max-sm:h-[60px] max-sm:w-[60px]">
-              <i
-                className="ti ti-plant-2 text-3xl text-stone-900 max-sm:text-2xl"
-                aria-hidden="true"
+              <img
+                src={paperIcon.src}
+                alt="Paper Icon"
+                className="w-10 h-10"
               />
             </div>
             <h3 className="mb-3 text-lg font-bold text-black max-sm:text-base">
               Authenticity
             </h3>
             <p className="text-base font-medium leading-normal text-stone-900 text-opacity-50 max-sm:text-sm">
-              we offer many different types of unique commission art with our partners.
+              we offer different types of unique handdrawn commission art with our partners.
             </p>
           </div>
           <div className="flex flex-col items-center p-5 text-center w-[400px] max-md:min-w-[300px] max-md:w-[45%] max-sm:w-full max-sm:min-w-0">
             <div className="flex justify-center items-center mb-6 w-20 h-20 rounded-full bg-slate-200 max-sm:h-[60px] max-sm:w-[60px]">
-              <i
-                className="ti ti-box text-3xl text-stone-900 max-sm:text-2xl"
-                aria-hidden="true"
+              <img
+                src={boxIcon.src}
+                alt="Box Icon"
+                className="w-10 h-10"
               />
             </div>
             <h3 className="mb-3 text-lg font-bold text-black max-sm:text-base">
               Fast & Free Shipping
             </h3>
             <p className="text-base font-medium leading-normal text-stone-900 text-opacity-50 max-sm:text-sm">
-              4-day or less delivery time, free shipping and an expedited
+              4-day or less delivery time for physical products, and an expedited
               delivery option.
             </p>
           </div>
           <div className="flex flex-col items-center p-5 text-center w-[400px] max-md:min-w-[300px] max-md:w-[45%] max-sm:w-full max-sm:min-w-0">
             <div className="flex justify-center items-center mb-6 w-20 h-20 rounded-full bg-slate-200 max-sm:h-[60px] max-sm:w-[60px]">
-              <i
-                className="ti ti-phone text-3xl text-stone-900 max-sm:text-2xl"
-                aria-hidden="true"
+              <img
+                src={phoneIcon.src}
+                alt="Phone Icon"
+                className="w-10 h-10"
               />
             </div>
             <h3 className="mb-3 text-lg font-bold text-black max-sm:text-base">
@@ -57,5 +64,5 @@ export default function AboutUsSection() {
         </div>
       </div>
     </div>
-  );
+  )
 }
