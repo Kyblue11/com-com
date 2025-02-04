@@ -2,7 +2,7 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-import Home from '@/app/(dashboard)/page'
+import Navbar from '@/app/components/Navbar'
 
 export default async function DashboardLayout({ children }) {
   const supabase = createServerComponentClient({ cookies })
@@ -14,7 +14,8 @@ export default async function DashboardLayout({ children }) {
 
   return (
     <>
-      <Home user={data.session.user} />
+      { data.session && <Navbar user={data.session.user} /> }
+      {children}
     </>
   )
 }
