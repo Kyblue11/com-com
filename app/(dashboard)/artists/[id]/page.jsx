@@ -130,7 +130,7 @@ export default async function ArtistProfile({ params }) {
           <p className="mt-2.5 text-base font-[250]">
             If you use the hashtag #comcom on Instagram,
             <br />
-            we'll spotlight you.
+            we&apos;ll spotlight you.
           </p>
           <button className="flex gap-10 mt-2.5 text-xl items-center">
             Check it out
