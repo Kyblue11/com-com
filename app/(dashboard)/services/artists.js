@@ -20,14 +20,40 @@ export async function getArtists() {
 export async function getArtist(id) {
   const supabase = getServerComponentClient()
 
-  const { data } = await supabase.from('artists')
+  const { data: artist, error } = await supabase.from('artists')
     .select()
     .eq('artist_id', id)
     .single()
 
-  if (!data) {
+  if (error) {
+    console.log(error.message)
     notFound()
   }
 
-  return data
+  return artist
+}
+
+export async function getArtistWorks(artistId) {
+  const supabase = getServerComponentClient()
+
+  const { data: works, error } = await supabase.from('tickets')
+    .select(`
+      id,
+      title,
+      body,
+      artists (
+        name,
+        profile_picture
+      ),
+      commission_pics (
+        urls
+      )
+    `)
+    .eq('artist_id', artistId)
+
+  if (error) {
+    console.log(error.message)
+  }
+
+  return works
 }
