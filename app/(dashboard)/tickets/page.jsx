@@ -13,7 +13,7 @@ export default function Tickets() {
       <nav>
         <div>
           <h2>All Commissions</h2>
-          <p><small>Check out our commission tickets by human artists!</small></p>
+          <p>Check out our commission tickets by human artists!</p>
         </div>
         <Link href="/tickets/create" className="ml-auto">
           <button className="btn-primary">New Ticket (Artists)</button>

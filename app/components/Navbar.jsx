@@ -11,7 +11,7 @@ return (
       <div className="flex flex-auto gap-10 items-start my-auto text-lg font-medium text-stone-900 text-opacity-50">
         <Link href="/" className="text-stone-900">Home</Link>
         <Link href="/tickets">Tickets</Link>
-        <Link href="/contacts">Contacts</Link>
+        <Link href="/artists">Artists</Link>
       </div>
     </div>
     <div className="flex gap-10 items-center self-start mt-1">
