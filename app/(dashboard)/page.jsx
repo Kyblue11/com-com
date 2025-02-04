@@ -1,5 +1,4 @@
 import TicketList from "../(dashboard)/tickets/TicketList";
-import Footer from "../components/Footer";
 import Categories from "../components/Categories";
 import TestimonialsSection from "../components/TestimonialsSection";
 import HeroSection from "../components/HeroSection";
@@ -17,7 +16,6 @@ export default function Home({ user }) {
       <Categories />
       <AboutUsSection />
       <TestimonialsSection />
-      <Footer />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 import Navbar from '@/app/components/Navbar'
+import Footer from '@/app/components/Footer'
 
 export default async function DashboardLayout({ children }) {
   const supabase = createServerComponentClient({ cookies })
@@ -16,6 +17,7 @@ export default async function DashboardLayout({ children }) {
     <>
       { data.session && <Navbar user={data.session.user} /> }
       {children}
+      { data.session && <Footer /> }
     </>
   )
 }
