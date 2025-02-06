@@ -1,12 +1,16 @@
+import Link from 'next/link';
+
 export default function CategoryCard({ image, title, description, showExplore = false }) {
   return (
     <div className="flex flex-col items-center w-[33%] max-sm:w-full">
       <div className={`flex flex-col items-center ${showExplore ? 'mt-14 max-sm:mt-10' : ''}`}>
-        <img
-          src={image}
-          alt={title}
-          className="object-cover w-full bg-white rounded-xl h-[400px] max-sm:h-[300px]"
-        />
+        <Link href="/PageInProgress">
+          <img
+            src={image}
+            alt={title}
+            className="object-cover w-full bg-white rounded-xl h-[400px] max-sm:h-[300px] hover:shadow-lg hover:scale-105 transition-transform duration-300"
+          />
+        </Link>
         <div className="mt-3 text-lg font-bold text-center text-stone-900">
           {title}
         </div>

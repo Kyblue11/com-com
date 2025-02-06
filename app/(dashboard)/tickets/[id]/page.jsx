@@ -3,8 +3,7 @@ import { notFound } from 'next/navigation'
 import { getTicket } from '../../services/tickets'
 import { getServerComponentClient } from '../../supabaseClient'
 
-import DeleteIcon from './DeleteIcon'
-import Carousel from '../../../components/Carousel'
+import CarouselLarge from '../../../components/CarouselLarge'
 
 export const dynamicParams = true
 
@@ -34,24 +33,28 @@ export default async function TicketDetails({ params }) {
           <main>
             <nav className="flex justify-between items-center pb-4 border-b-2 border-gray-200 my-10 mx-auto w-full">
               <h2 className="text-3xl font-bold text-stone-900">Commission Ticket Details</h2>
-              <div className="ml-auto">
-                {data.session.user.email === ticket.user_email && (
-                  <DeleteIcon id={ticket.id} />
-                )}
-              </div>
             </nav>
             <div className="ticket-details-container">
               <div className="ticket-details-left">
               {Array.isArray(ticket.commission_pics.urls) && (
-                <Carousel images={ticket.commission_pics.urls} />
+                <CarouselLarge images={ticket.commission_pics.urls} />
               )}
               </div>
               <div className="ticket-details-right">
                 <h3 className="text-3xl font-bold text-stone-900">{ticket.title}</h3>
-                <small>ㅤ</small>
+                <div className="flex items-center mt-2">
+                  <Link href={`/artists/${ticket.artist_id}`} className="flex items-center text-primary underline">
+                    <img
+                      src={ticket.artists.profile_picture}
+                      alt={`Profile picture of ${ticket.artists.name}`}
+                      className="w-10 h-10 rounded-full object-cover mr-2"
+                    />
+                    <span className="text-lg font-medium text-stone-500">{ticket.artists.name}</span>
+                  </Link>
+                </div>
+                <div className="mt-4"></div>
                 <p className="text-lg font-medium text-stone-900 text-opacity-50">{ticket.body}</p>
-                <p className="text-lg font-medium text-stone-900">Artist: <Link href={`/artists/${ticket.artist_id}`} className="text-primary underline">{ticket.artists.name}</Link></p>
-                <p className="text-lg font-medium text-stone-900">Commission Details:</p>
+                <p className="text-lg font-medium text-stone-900 mt-4">Commission Details:</p>
                 <ul className="list-disc list-inside">
                   <li className="text-lg font-medium text-stone-900">Price: RM{ticket.price}</li>
                 </ul>

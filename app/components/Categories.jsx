@@ -1,18 +1,21 @@
 import CategoryCard from "./CategoryCard";
+import genshin_category from "./genshin_category.jpeg";
+import aot_category from "./aot_category.jpeg";
+import hatsunaMiku_category from "./hatsunaMiku_category.jpeg";
 
 const categoryData = [
   {
-    image: "https://placehold.co/600x400/e8f0e8/e8f0e8",
+    image: genshin_category,
     title: "Genshin Impact",
   },
   {
-    image: "https://placehold.co/600x400/d4e8d4/d4e8d4",
+    image: aot_category,
     title: "Attack on Titan",
     description: "Characters like Eren, Mikasa and full-scale drawings of Shiganshina.",
     showExplore: true
   },
   {
-    image: "https://placehold.co/600x400/e0e8e0/e0e8e0",
+    image: hatsunaMiku_category,
     title: "Hatsuna Miku and co.",
   }
 ];
@@ -33,7 +36,7 @@ export default function Categories() {
           {categoryData.map((category, index) => (
             <CategoryCard
               key={index}
-              image={category.image}
+              image={category.image.src}
               title={category.title}
               description={category.description}
               showExplore={category.showExplore}
