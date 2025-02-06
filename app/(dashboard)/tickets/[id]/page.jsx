@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { getTicket } from '../../services/tickets'
 import { getServerComponentClient } from '../../supabaseClient'
 
-import Carousel from '../../../components/Carousel'
+import CarouselLarge from '../../../components/CarouselLarge'
 
 export const dynamicParams = true
 
@@ -37,7 +37,7 @@ export default async function TicketDetails({ params }) {
             <div className="ticket-details-container">
               <div className="ticket-details-left">
               {Array.isArray(ticket.commission_pics.urls) && (
-                <Carousel images={ticket.commission_pics.urls} />
+                <CarouselLarge images={ticket.commission_pics.urls} />
               )}
               </div>
               <div className="ticket-details-right">
