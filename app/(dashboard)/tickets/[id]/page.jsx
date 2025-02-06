@@ -42,10 +42,19 @@ export default async function TicketDetails({ params }) {
               </div>
               <div className="ticket-details-right">
                 <h3 className="text-3xl font-bold text-stone-900">{ticket.title}</h3>
-                <small>ㅤ</small>
+                <div className="flex items-center mt-2">
+                  <Link href={`/artists/${ticket.artist_id}`} className="flex items-center text-primary underline">
+                    <img
+                      src={ticket.artists.profile_picture}
+                      alt={`Profile picture of ${ticket.artists.name}`}
+                      className="w-10 h-10 rounded-full object-cover mr-2"
+                    />
+                    <span className="text-lg font-medium text-stone-500">{ticket.artists.name}</span>
+                  </Link>
+                </div>
+                <div className="mt-4"></div>
                 <p className="text-lg font-medium text-stone-900 text-opacity-50">{ticket.body}</p>
-                <p className="text-lg font-medium text-stone-900">Artist: <Link href={`/artists/${ticket.artist_id}`} className="text-primary underline">{ticket.artists.name}</Link></p>
-                <p className="text-lg font-medium text-stone-900">Commission Details:</p>
+                <p className="text-lg font-medium text-stone-900 mt-4">Commission Details:</p>
                 <ul className="list-disc list-inside">
                   <li className="text-lg font-medium text-stone-900">Price: RM{ticket.price}</li>
                 </ul>

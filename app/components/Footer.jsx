@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer className="flex overflow-hidden flex-col px-20 py-12 w-full bg-slate-300 max-md:px-5 max-md:max-w-full">
@@ -10,38 +12,42 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex gap-6 items-center mt-6">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5e9587f8f3121514cbccb5f5ae8fe0da06609fc2ea59a035d4280cac22d58cd4?placeholderIfAbsent=true&apiKey=caa0fab17ad04eae8822654d11ffb6b0"
-              alt="Social media icon 1"
-              className="object-contain shrink-0 self-stretch my-auto w-12 aspect-square"
-            />
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/45bf739d33aa6e66d3ac4d435760a5208b27bbaae15486277457a82f15698f7b?placeholderIfAbsent=true&apiKey=caa0fab17ad04eae8822654d11ffb6b0"
-              alt="Social media icon 2"
-              className="object-contain shrink-0 self-stretch my-auto w-12 aspect-square"
-            />
+            <Link href="/PageInProgress">
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/5e9587f8f3121514cbccb5f5ae8fe0da06609fc2ea59a035d4280cac22d58cd4?placeholderIfAbsent=true&apiKey=caa0fab17ad04eae8822654d11ffb6b0"
+                alt="Social media icon 1"
+                className="object-contain shrink-0 self-stretch my-auto w-12 aspect-square"
+              />
+            </Link>
+            <Link href="/PageInProgress">
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/45bf739d33aa6e66d3ac4d435760a5208b27bbaae15486277457a82f15698f7b?placeholderIfAbsent=true&apiKey=caa0fab17ad04eae8822654d11ffb6b0"
+                alt="Social media icon 2"
+                className="object-contain shrink-0 self-stretch my-auto w-12 aspect-square"
+              />
+            </Link>
           </div>
         </div>
         <div className="flex gap-10 items-start text-lg text-stone-900 text-opacity-50">
           <div className="flex flex-col whitespace-nowrap">
             <div className="font-bold text-stone-900">Information</div>
-            <div className="mt-6">About</div>
-            <div className="mt-6">Product</div>
-            <div className="mt-6">Blog</div>
+            <Link href="/PageInProgress" className="mt-6">About</Link>
+            <Link href="/PageInProgress" className="mt-6">Product</Link>
+            <Link href="/PageInProgress" className="mt-6">Blog</Link>
           </div>
           <div className="flex flex-col">
             <div className="font-bold text-stone-900">Company</div>
-            <div className="mt-6">Community</div>
-            <div className="mt-6">Career</div>
-            <div className="mt-6">Our story</div>
+            <Link href="/PageInProgress" className="mt-6">Community</Link>
+            <Link href="/PageInProgress" className="mt-6">Career</Link>
+            <Link href="/PageInProgress" className="mt-6">Our story</Link>
           </div>
           <div className="flex flex-col">
             <div className="font-bold text-stone-900">Contact</div>
-            <div className="mt-6">Getting Started</div>
-            <div className="mt-6">Pricing</div>
-            <div className="mt-6">Resources</div>
+            <Link href="/PageInProgress" className="mt-6">Getting Started</Link>
+            <Link href="/PageInProgress" className="mt-6">Pricing</Link>
+            <Link href="/PageInProgress" className="mt-6">Resources</Link>
           </div>
         </div>
       </div>
