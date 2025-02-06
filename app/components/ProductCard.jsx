@@ -3,7 +3,7 @@ import Carousel from './Carousel';
 
 export default function ProductCard({ ticket }) {
   return (
-    <div key={ticket.id} className="card my-5">
+    <div key={ticket.id} className="card my-5 hover:shadow-lg hover:scale-105 transition-transform duration-300">
       <Link href={`/tickets/${ticket.id}`}>
         <h3>{ticket.title}</h3>
         <p>{ticket.body.slice(0, 52)}...</p>

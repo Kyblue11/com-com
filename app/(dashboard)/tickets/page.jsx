@@ -15,9 +15,6 @@ export default function Tickets() {
           <h2>All Commissions</h2>
           <p>Check out our commission tickets by human artists!</p>
         </div>
-        <Link href="/tickets/create" className="ml-auto">
-          <button className="btn-primary">New Ticket (Artists)</button>
-        </Link>
       </nav>
       <Suspense fallback={<Loading />}>
         <TicketList />
