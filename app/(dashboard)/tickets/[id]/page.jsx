@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 import { getTicket } from '../../services/tickets'
 import { getServerComponentClient } from '../../supabaseClient'
 
-import DeleteIcon from './DeleteIcon'
 import Carousel from '../../../components/Carousel'
 
 export const dynamicParams = true
@@ -34,11 +33,6 @@ export default async function TicketDetails({ params }) {
           <main>
             <nav className="flex justify-between items-center pb-4 border-b-2 border-gray-200 my-10 mx-auto w-full">
               <h2 className="text-3xl font-bold text-stone-900">Commission Ticket Details</h2>
-              <div className="ml-auto">
-                {data.session.user.email === ticket.user_email && (
-                  <DeleteIcon id={ticket.id} />
-                )}
-              </div>
             </nav>
             <div className="ticket-details-container">
               <div className="ticket-details-left">

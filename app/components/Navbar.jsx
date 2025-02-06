@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Logo from './anilabs_logo.png'
 import LogoutButton from './LogoutButton'
 
+import { PiBookmarkSimpleBold } from "react-icons/pi";
+
 export default function Navbar({ user }) {
 return (
   <nav className="flex flex-wrap gap-5 justify-between w-full max-w-[1248px] max-md:max-w-full">
@@ -15,12 +17,10 @@ return (
       </div>
     </div>
     <div className="flex gap-10 items-center self-start mt-1">
-      <img
-        loading="lazy"
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/b25f9cd3a24e1a6bae3f4655e0fed7e870f8f369a0ecdc464d235478a3a8ebfc?placeholderIfAbsent=true&apiKey=caa0fab17ad04eae8822654d11ffb6b0"
-        alt="Cart"
-        className="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
-      />
+      <PiBookmarkSimpleBold
+          className="object-contain shrink-0 self-stretch my-auto"
+          size={22}
+        />
       <img
         loading="lazy"
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/97e04eece18ef753b843c79800bfca7ebd4a798b8b9c4f596fe361bf1a14ff56?placeholderIfAbsent=true&apiKey=caa0fab17ad04eae8822654d11ffb6b0"
