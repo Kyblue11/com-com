@@ -1,3 +1,5 @@
+![comcomsr](comcomsr.gif)
+
 unlike the first website, this one uses:
 
 - createServerComponentClient for server-side caching
