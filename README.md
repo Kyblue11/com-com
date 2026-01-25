@@ -1,6 +1,6 @@
 ![comcomsr](comcomsr.gif)
 
-unlike the first website, this one uses:
+Feats:
 
 - createServerComponentClient for server-side caching
 - revalidatePath to refresh and update cache container
@@ -11,5 +11,5 @@ unlike the first website, this one uses:
 
 - Webtest Speed check (current):
   1. Anilabs.net: 59 81 96 100
-  2. Anelabs Vercel Optimised: 75 81 96 100
+  2. Anilabs Vercel Optimised: 75 81 96 100
   3. Com Com Vercel: 100 95 100 91
